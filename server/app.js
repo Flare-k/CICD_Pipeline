@@ -1,19 +1,4 @@
-const express = require("express");
 
-const app = express();
-const PORT = 80;
-
-function handleListening() {
-    console.log(`Listening on: http://localhost:${PORT}`);
-}
-
-const sayHello = (req, res) => res.send("This is Server Test~!");
-
-app.get('/', sayHello);
-app.listen(PORT, handleListening); 
-
-
-/*
 const express = require("express");
 const os = require("os");
 
@@ -32,5 +17,3 @@ const sayHello = (req, res) => res.send(`This is Server Test~! Server Run at ${d
 
 app.get('/', sayHello);
 app.listen(PORT, handleListening); 
-
-*/
