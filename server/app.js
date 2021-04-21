@@ -1,11 +1,22 @@
 const express = require("express");
-const os = require("os");
+
+const app = express();
+const PORT = 80;
+
+function handleListening() {
+    console.log(`Listening on: http://localhost:${PORT}`);
+}
+
+const sayHello = (req, res) => res.send("This is Server Test~!");
+
+app.get('/', sayHello);
+app.listen(PORT, handleListening); 
+
+
 /*
-import morgan from "morgan";
-import helmet from "helmet";
-import cookieParser from "cookie-parser";
- import bodyParser from "body-parser";
-*/
+const express = require("express");
+const os = require("os");
+
 const app = express();
 const PORT = 80;
 const time = new Date();
@@ -18,12 +29,8 @@ function handleListening() {
 
 const sayHello = (req, res) => res.send(`This is Server Test~! Server Run at ${date} ${curTime}`);
 
-/*
-app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet());
-app.use(morgan("dev"));
-*/
+
 app.get('/', sayHello);
 app.listen(PORT, handleListening); 
+
+*/
